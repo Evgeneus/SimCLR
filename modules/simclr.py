@@ -1,5 +1,6 @@
 import torch.nn as nn
 import torchvision
+from modules.resnet import ResNet18
 
 
 class Identity(nn.Module):
@@ -35,7 +36,7 @@ class SimCLR(nn.Module):
 
     def get_resnet(self, name):
         resnets = {
-            "resnet18": torchvision.models.resnet18(),
+            "resnet18": ResNet18(),
             "resnet50": torchvision.models.resnet50(),
         }
         if name not in resnets.keys():

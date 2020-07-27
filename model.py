@@ -16,7 +16,7 @@ def load_model(args, loader, reload_model=False):
 
     scheduler = None
     if args.optimizer == "Adam":
-        learning_rate = 0.5 * args.batch_size / 256
+        learning_rate = 0.005
         # optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)  # TODO: LARS
         optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
         # "decay the learning rate with the cosine decay schedule without restarts"

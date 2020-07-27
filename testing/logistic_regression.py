@@ -136,13 +136,13 @@ def main(_run, _log):
             root,
             train=True,
             download=True,
-            transform=TransformsSimCLR(size=224).test_transform,
+            transform=TransformsSimCLR(size=32).test_transform,
         )
         test_dataset = torchvision.datasets.CIFAR10(
             root,
             train=False,
             download=True,
-            transform=TransformsSimCLR(size=224).test_transform,
+            transform=TransformsSimCLR(size=32).test_transform,
         )
     else:
         raise NotImplementedError
